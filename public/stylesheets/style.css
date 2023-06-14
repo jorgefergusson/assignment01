@@ -7,4 +7,21 @@ a {
   color: #00b7ff;
 }
 
+p {
+  text-align: justify;
+}
 
+#Mision,
+#Title {
+  text-align: center;
+}
+
+#Photo {
+  width: 200px;
+}
+
+.Badge {
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-bottom: 40px;
+}
