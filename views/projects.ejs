@@ -1,0 +1,31 @@
+<%- include partials/header.ejs %> <%- include partials/top_nav.ejs %>
+<main class="container">
+  <div class="container">
+    <br />
+    <div class="row">
+      <div class="col-12"><h1 id="Title"><%= title %></h1></div>
+    </div>
+    <br />
+    <div class="row">
+      <%- include('partials/project-card.ejs',{projectName:'Corporate Websites Redesign',
+                                               projectDescr:'Redesign the websites of the company using serverless architecture and using WordPress as the CMS',
+                                               item1:'Use devops to deploy websites faster',
+                                               item2:'Used Agile methodology to deliver MVP',
+                                               item3:'Used WordPress as the CMS with custom theme design',
+                                              });   %>
+      <%- include('partials/project-card.ejs',{projectName:'Corporate intranet',
+                                              projectDescr:'Using SharePoint Online for creating intranet site for each company and create some templates for business units or projects',
+                                              item1:'Used native Microsoft SharePoint Components',
+                                              item2:'Templates aligned with the brand guidelines',
+                                              item3:'Provided training to end-users to manage their sites',
+                                             });   %>
+      <%- include('partials/project-card.ejs',{projectName:'Boardroom App',
+                                               projectDescr:'Mobile app for boardroom members to access documentation of the company to take decissions',
+                                               item1:'Got subscriptions to Android Play Store and Apple Store',
+                                               item2:'Enhanced current app version adding security features',
+                                               item3:'App developed using Swift and Kotlin',
+                                              });   %>
+    </div>
+</main>
+
+<%- include partials/footer.ejs %> <%- include partials/bottom_nav.ejs %>

@@ -1,0 +1,49 @@
+<%- include partials/header.ejs %> <%- include partials/top_nav.ejs %>
+<main class="container">
+  <div class="container">
+    <br />
+    <div class="row">
+      <div class="col-12"><h1 id="Title"><%= title %></h1></div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-9">
+        <div class="row">
+          <div class="col-4">
+            <img
+              src="/img/jorge.jpg"
+              alt=""
+              srcset=""
+              id="Photo"
+              class="rounded-circle"
+            />
+          </div>
+          <div class="col-7">
+            <h2 id="Mision">Mission statement</h2>
+            <p>
+              With a Bachelor's degree in Computer Science and over a decade of
+              experience, I have successfully managed IT projects using both PMI
+              and Scrum methodologies. By harnessing the power of technology, I
+              enable companies to enhance their operational efficiencies and
+              leverage it to accomplish their organizational objectives.
+            </p>
+            <p>
+              For more details explore my portfolio site, I suggest to go to:
+            </p>
+            <a
+              href="/about"
+              class="btn btn-outline-secondary .btn-lg"
+              role="button"
+              >About me</a
+            >
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <div class="col-3"><%- include partials/skills.ejs %></div>
+    </div>
+  </div>
+</main>
+
+<%- include partials/footer.ejs %> <%- include partials/bottom_nav.ejs %>
