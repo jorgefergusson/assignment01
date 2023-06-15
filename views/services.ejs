@@ -6,42 +6,45 @@
       <div class="col-12"><h1 id="Title"><%= title %></h1></div>
     </div>
     <br />
+
     <div class="row">
-      <div class="col-9">
-        <div class="row">
-          <div class="col-4">
-            <img
-              src="/img/jorge.jpg"
-              alt=""
-              srcset=""
-              id="Photo"
-              class="rounded-circle"
-            />
+      <div class="col-2"></div>
+      <div class="col-4">
+        <div class="Service">
+          <div class="SCard SImage">
+            <i class="fa-solid fa-code fa-lg iconService"></i>
           </div>
-          <div class="col-7">
-            <h2 id="Mision">Mission statement</h2>
-            <p>
-              With a Bachelor's degree in Computer Science and over a decade of
-              experience, I have successfully managed IT projects using both PMI
-              and Scrum methodologies. By harnessing the power of technology, I
-              enable companies to enhance their operational efficiencies and
-              leverage it to accomplish their organizational objectives.
-            </p>
-            <p>
-              For more details explore my portfolio site, I suggest to go to:
-            </p>
-            <a
-              href="/about"
-              class="btn btn-outline-secondary .btn-lg"
-              role="button"
-              >About me</a
-            >
+          <div class="SCard SDesc">Web Application Development</div>
+        </div>
+        <div class="Service">
+          <div class="SCard SImage">
+            <i class="fa-solid fa-cloud-arrow-up fa-lg iconService"></i>
           </div>
+          <div class="SCard SDesc">Cloud migration Assesstments</div>
+        </div>
+        <div class="Service">
+          <div class="SCard SImage">
+            <i class="fa-solid fa-chart-gantt fa-lg iconService"></i>
+          </div>
+          <div class="SCard SDesc">IT Project Management</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="Service">
+          <div class="SCard SImage">
+            <i class="fa-solid fa-list-check fa-lg iconService"></i>
+          </div>
+          <div class="SCard SDesc">Business requirements</div>
         </div>
         <br />
+        <div class="Service">
+          <div class="SCard SImage">
+            <i class="fa-solid fa-laptop-medical fa-lg iconService"></i>
+          </div>
+          <div class="SCard SDesc">Applications Support</div>
+        </div>
       </div>
-
-      <div class="col-3"><%- include partials/skills.ejs %></div>
+      <div class="col-2"></div>
     </div>
   </div>
 </main>

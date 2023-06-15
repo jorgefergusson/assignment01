@@ -17,17 +17,17 @@ router.get("/projects", function (req, res, next) {
 });
 
 /* GET service page. */
-router.get("/service", function (req, res, next) {
-  res.render("index", { title: "service" });
+router.get("/services", function (req, res, next) {
+  res.render("services", { title: "services" });
 });
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+/* GET about page. */
+router.get("/contact", function (req, res, next) {
+  res.render("contact", { title: "Contact Me" });
 });
 
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+router.post("/contact", (req, res, next) => {
+  res.render("index", { title: "Welcome to Jorge Fergusson Portfolio" });
 });
 
 module.exports = router;

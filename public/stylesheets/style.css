@@ -1,3 +1,11 @@
+/*
+    Student’s Name: Jorge Fergusson Ossa
+    StudentID: 301258165
+    Date: 06/14/2023
+  
+    CSS styles
+*/
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -31,4 +39,14 @@ p {
 }
 .card-img {
   margin-top: 10px;
+}
+
+.Service {
+  display: inline-block;
+  padding-left: 25px;
+}
+.SCard {
+  float: left;
+  padding-right: 30px;
+  padding-bottom: 20px;
 }

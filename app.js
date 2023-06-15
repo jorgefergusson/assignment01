@@ -1,3 +1,11 @@
+/*
+    Student’s Name: Jorge Fergusson Ossa
+    StudentID: 301258165
+    Date: 06/14/2023
+  
+    app.js created using the express-generator
+*/
+
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
