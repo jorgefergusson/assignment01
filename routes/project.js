@@ -8,92 +8,100 @@ let Project = require("../models/project");
 
 //manage all routes
 
-router.get("/", (req, res, next) => {
+router.get("/list", (req, res, next) => {
   Project.find((err, projectlist) => {
     if (err) {
       return console.error(err);
     } else {
       //console.log(productlist);
       res.render("project/list", {
-        title: "Product Info",
-        ProductList: projectlist,
+        title: "Projects Info",
+        ProjectList: projectlist,
       });
     }
   });
 });
 
+router.get("/", (req, res, next) => {
+  res.render("project/list", { title: "Projects Info" });
+});
+
 router.get("/add", (req, res, next) => {
-  res.render("product/add", { title: "Add Product" });
+  res.render("project/add", { title: "Add Project" });
 });
 
 router.post("/add", (req, res, next) => {
   //getting data from form
-  let newProduct = Product({
-    "name": req.body.pname,
-    "company": req.body.pcompany,
-    "price": req.body.pprice
+  let newProject = Project({
+    pTitle: req.body.ptitle,
+    pDescription: req.body.pdescription,
+    pCost: req.body.pcost,
+    pDeadline: req.body.pdeadline,
   });
-  
+
+  console.log(newProject);
   //insert data:
-  Product.create(newProduct, (err, Product) => {
+  Project.create(newProject, (err, Project) => {
     if (err) {
-        console.log(err);
-        res.end(err);
+      console.log(err);
+      res.end(err);
     } else {
-        console.log("Add:" + newProduct);
-        res.redirect("/product");
+      console.log("Add:" + newProject);
+      res.redirect("/project");
     }
   });
 });
 
 //Retrieve data from MongoDB and Open it in view (FORM)
-router.get('/edit/:id', (req, res, next) => {
+router.get("/edit/:id", (req, res, next) => {
   let id = req.params.id;
 
-  Product.findById(id, (err, productToEdit) => {
-      if(err){
-          console.log(err);
-          res.end(err);
-      }else{
-          //write code to display data in view
-          res.render('product/edit', { title : 'Edit Product', product: productToEdit})
-      }
+  Project.findById(id, (err, projectToEdit) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //write code to display data in view
+      res.render("project/edit", {
+        title: "Edit Project",
+        project: projectToEdit,
+      });
+    }
   });
 });
 
 //write code to store updated data into MongoDB
-router.post('/edit/:id', (req, res, next) => {
+router.post("/edit/:id", (req, res, next) => {
   let id = req.params.id;
 
-  let updatedProduct = Product({
-      "_id": id,
-      "name": req.body.pname,
-      "company": req.body.pcompany,
-      "price": req.body.price
+  let updatedProject = Project({
+    _id: id,
+    pTitle: req.body.ptitle,
+    pDescription: req.body.pdescription,
+    pCost: req.body.pcost,
+    pDeadline: req.body.pdeadline,
   });
 
-  Product.updateOne({_id: id}, updatedProduct, (err) => {
-      if(err){
-          console.log(err);
-          res.end(err);
-      }else{
-          res.redirect('/product');
-      }
+  Project.updateOne({ _id: id }, updatedProject, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/project");
+    }
   });
 });
 
-router.get('/delete/:id', (req, res, next) => {
+router.get("/delete/:id", (req, res, next) => {
   let id = req.params.id;
 
-  
-
-  Product.remove({_id: id}, (err) => {
-      if(err){
-          console.log(err);
-          res.end(err);
-      }else{
-          res.redirect('/product');
-      }
+  Project.remove({ _id: id }, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/project");
+    }
   });
 });
 module.exports = router;

@@ -1,0 +1,28 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/top_nav.ejs %>
+<main class="container">
+  <h1><%= title %></h1>
+  <p>Fill the following form to <%= title %></p>
+  <form class="form" method="post">
+    <div class="form-group">
+      <label for="ptitle">Project Title:</label>
+      <input type="text" class="form-control" id="ptitle" name="ptitle" />
+    </div>
+    <div class="form-group">
+      <label for="pdescription">Project Description:</label>
+      <input type="text" class="form-control" id="pdescription" name="pdescription" />
+    </div>
+    <div class="form-group">
+      <label for="pcost">Project Cost:</label>
+      <input type="text" class="form-control" id="pcost" name="pcost" />
+    </div>
+    <div class="form-group">
+        <label for="pdeadline">Project deadline:</label>
+        <input type="text" class="form-control" id="pdeadline" name="pdeadline" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-danger">Reset</button>
+  </form>
+</main>
+
+<%- include ../partials/footer.ejs %> <%- include ../partials/bottom_nav.ejs %>

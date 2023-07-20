@@ -1,0 +1,30 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/top_nav.ejs %>
+
+<main class="container">
+    <form class="form" method="POST">
+        <div class="form-group">
+          <label for="ptitle">Project title:</label>
+          <input type="text" class="form-control" id="ptitle" name="ptitle" value="<%= project.pTitle %>">
+        </div>
+        <div class="form-group">
+            <label for="pdescription">Project Company:</label>
+            <input type="text" class="form-control" id="pdescription" name="pdescription" value="<%= project.pDescription %>">
+        </div>
+        <div class="form-group">
+            <label for="pcost">Cost:</label>
+            <input type="text" class="form-control" id="pcost" name="pcost" value="<%= project.pCost %>">
+        </div>
+        <div class="form-group">
+            <label for="pdeadline">Deadline:</label>
+            <input type="text" class="form-control" id="pdeadline" name="pdeadline" value="<%= project.pDeadline %>">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>

@@ -3,12 +3,13 @@ let mongoose = require("mongoose");
 //Create model of product
 let projectModel = mongoose.Schema(
   {
-    name: String,
-    company: String,
-    price: Number,
+    pTitle: String,
+    pDescription: String,
+    pCost: Number,
+    pDeadline: String,
   },
   {
-    collection: "Projects",
+    collection: "project",
   }
 );
 

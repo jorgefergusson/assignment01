@@ -1,0 +1,39 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/top_nav.ejs %>
+<main class="container">
+  <h1><%= title %></h1>
+  <br>
+
+  <a href="/project/add" class="btn btn-primary"> <b>+</b> Add a new project</a>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Project Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let index=0; index<ProjectList.length;index++) { %>
+            <tr>
+                <td><%= ProjectList[index].pTitle %></td>
+                <td><%= ProjectList[index].pDescription %></td>
+                <td><%= ProjectList[index].pCost %></td>
+                <td><%= ProjectList[index].pDeadline %></td>
+                <td>
+                    <a href="/project/edit/<%= ProjectList[index].id %>" class="btn btn-info btn-sm"> <i class="fa-solid fa-file-pen fa-lg"></i> Edit</a>
+                </td>
+                <td>
+                    <a href="/project/delete/<%= ProjectList[index].id %>" class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash fa-lg"></i> Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+    
+  </table>
+
+</main>
+
+<%- include ../partials/footer.ejs %> <%- include ../partials/bottom_nav.ejs %>
